@@ -60,13 +60,13 @@ def generate_recursive(source_path, source_path_parent, dest_dir_parent):
 
     print(f"Database generated at \"{database_path.absolute()}\"")
 
-    submodule_paths = get_submodules(source_path)
-    for p in submodule_paths:
-        generate_recursive(source_path / p, source_path, dest_dir)
+    # submodule_paths = get_submodules(source_path)
+    # for p in submodule_paths:
+    #     generate_recursive(source_path / p, source_path, dest_dir)
 
-    submodules_file = dest_dir / ".gitmodules"
-    with open(submodules_file, "w") as f:
-        f.writelines("\n".join(p.as_posix() for p in submodule_paths))
+    # submodules_file = dest_dir / ".gitmodules"
+    # with open(submodules_file, "w") as f:
+    #     f.writelines("\n".join(p.as_posix() for p in submodule_paths))
 
 def main():
     argc = len(sys.argv)
